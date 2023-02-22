@@ -3,6 +3,7 @@ import { Component, Inject } from '@angular/core';
 
 // Import the AuthService type from the SDK
 import { AuthService } from '@auth0/auth0-angular';
+import {ThoughtService} from '../shared/thought.service'
 
 @Component({
   selector: 'app-auth-button',
@@ -14,11 +15,19 @@ import { AuthService } from '@auth0/auth0-angular';
     </ng-container>
 
     <ng-template #loggedOut>
-      <button (click)="auth.loginWithRedirect()">Log in</button>
+      <button (click)="login()">Log in</button>
     </ng-template>
   `,
 })
 export class AuthButtonComponent {
   // Inject the authentication service into your component through the constructor
-  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
+  constructor(
+    @Inject(DOCUMENT) public document: Document,
+    public auth: AuthService,
+    private thoughtService: ThoughtService
+  ) {}
+
+  login() {
+    this.auth.loginWithRedirect();
+  }
 }

@@ -1,9 +1,16 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false
+  production: false,
+  auth: {
+    domain: "golfer-geek.us.auth0.com",
+    clientId: "DqDFsmpuW5RPgFzWkE9OR7XBsOATBxr1",
+    authorizationParams: {
+      audience: "https://hiverarchy-api.com",
+      redirect_uri: window.location.origin
+    }
+  },
+  // api: 'https://hiverarchyapi.azurewebsites.net/api'
+  api: 'https://localhost:5000/api'
+
 };
 
 /*

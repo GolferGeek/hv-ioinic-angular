@@ -79,6 +79,16 @@
             "development": {
               "browserTarget": "app:build:development"
             },
+            "localapi": {
+              "browserTarget": "app:build:development",
+              ,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.localapi.ts"
+                }
+              ]
+            },
             "ci": {
               "progress": false
             }
@@ -136,7 +146,8 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

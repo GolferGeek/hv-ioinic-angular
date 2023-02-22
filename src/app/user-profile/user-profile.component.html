@@ -1,3 +1,14 @@
 <p>
-  user-profile works!
+  <ion-list>
+    <ion-list-header>
+      <ion-label>My Thoughts</ion-label>
+    </ion-list-header>
+    <ion-card>
+      <ion-card-header *ngFor="let thought of thoughtService.myThoughts$ | async">
+        <ion-card-title>{{ thought.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </p>

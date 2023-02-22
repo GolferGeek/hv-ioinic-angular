@@ -8,6 +8,5 @@ export const environment = {
       redirect_uri: window.location.origin
     }
   },
-  api: 'https://hiverarchyapi.azurewebsites.net/api'
-
+  api: 'https://localhost:5000/api'
 };

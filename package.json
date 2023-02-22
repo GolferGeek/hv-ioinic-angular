@@ -6,6 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port=3200",
+    "localapi": "ng s --port=3200 --configuration=localapi",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
