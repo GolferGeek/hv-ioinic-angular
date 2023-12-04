@@ -3,7 +3,7 @@ import { Component, Inject } from '@angular/core';
 
 // Import the AuthService type from the SDK
 import { AuthService } from '@auth0/auth0-angular';
-import {ThoughtService} from '../shared/thought.service'
+import {ArcService} from '../shared/arc.service'
 
 @Component({
   selector: 'app-auth-button',
@@ -24,7 +24,7 @@ export class AuthButtonComponent {
   constructor(
     @Inject(DOCUMENT) public document: Document,
     public auth: AuthService,
-    private thoughtService: ThoughtService
+    private arcService: ArcService
   ) {}
 
   login() {

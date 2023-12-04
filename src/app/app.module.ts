@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHttpInterceptor } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
+import { GraphQLModule } from './graphql/graphql.module';
 
 @NgModule({
   declarations: [AppComponent, AuthButtonComponent, UserProfileComponent],
@@ -27,7 +28,8 @@ import { environment as env } from '../environments/environment';
         httpInterceptor: {
           allowedList: [`${env.api}/thoughts`],
         },
-    })
+    }),
+    GraphQLModule
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
